@@ -135,7 +135,7 @@ ciertas claves? (4 puntos)
         Mostrar paso a paso el arbol-B al eliminar " www.espn.com": (4 puntos)
 
 #
-4. Agregar un nodo adicional (www.youtube.com, 134.24.13.78) y mostrarlo paso a
+- 4. Agregar un nodo adicional (www.youtube.com, 134.24.13.78) y mostrarlo paso a
 paso. (3 puntos)
 
     **EXPLICACIÓN**
