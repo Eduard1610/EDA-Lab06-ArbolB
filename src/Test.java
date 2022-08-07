@@ -40,7 +40,7 @@ public class Test {
         System.out.println("_______________________________________________________________________");
         System.out.println("***** Agregando un nuevo nodo (www.youtube.com, 134.24.13.78) *****");
         st.put("www.youtube.com", "134.24.13.78");
-        System.out.println("***** Mostrando árbol con el nodo youtube agregado *****\n");
+        System.out.println("***** Mostrando Ã¡rbol con el nodo youtube agregado *****\n");
         System.out.println(st);
     }
 }
