@@ -2,6 +2,7 @@
 public class BTree<Key extends Comparable<Key>, Value>  {
 
 	//ORDEN M
+
 	//Debe ser mayor que dos porque la cantidad máxima de hijos por cada Nodo es M-1
     private static final int M = 4;
 
@@ -203,7 +204,3 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         return k1.compareTo(k2) == 0;
     }
 }
-
-
-
-
