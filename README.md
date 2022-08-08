@@ -143,6 +143,9 @@ Dado que al árbol se le ingresan dos valores:
 #
 - 2. Mostrar en un diagrama de árbol gráficamente la estructura final para los datos
 ingresados. (4 puntos)
+ <img src="img/2ArbolB.jpg">  
+ -Usando las indicaciones anteriores para elaborar el arbol b según las especificaciones para la distribución de todos los datos vemos que se trata de un árbol de orden 4 entonces habían desborde de datos con nodos que ya poseían 3 claves entonces se modificaba la divisón de datos para que este se balanceara quitando un dato del medio que podia ser el 2 o 3 para que el 3 sea padre y los valores de datos restantes se crean como nodos que sean hijos.
+ 
 
 #
 - 3. El método toString() del árbol, retorna lo siguiente. ¿Por qué están entre paréntesis
