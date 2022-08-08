@@ -100,6 +100,46 @@ Dado que al árbol se le ingresan dos valores:
         Se requiere: Modificar el código para que también pueda mostrarse todos los
         valores asociados a la clave.
 
+    **EXPLICACIÓN**
+    
+    La funcion get devolvera para este ejemplo los DNS del link deseado. En este caso la funcion get usa una funcion privada llamada search (linea 3) que solicitara la raiz del arbol, la llave que sera el link y la altura del arbol para devolver el DNS del link solicitado o de no encontrarse retornara null.
+    ```sh
+        public Value get(Key key) {
+            if (key == null) throw new IllegalArgumentException("argument to get() is null");
+            return search(root, key, height);
+        }
+    ```
+    
+    Internamente la funcion search extrae el array de llaves en el nodo actual y los almacena en la variable children:
+    ```sh
+        private Value search(Node x, Key key, int ht) {
+            Entry[] children = x.children;
+            ...
+        }
+    ```
+    
+    Entonces evaluara dos casos, cuando el nodo actual este en el nivel de hoja o en otro distinto a este. 
+     
+    En el caso de estar en nivel hoja empezara a iterar para cada llave del nodo hoja actual y comparara si el valor es igual al link buscado. En caso de encontrarlo retornara su DNS, caso contrario un null. 
+    ```sh
+        if (ht == 0) {
+            for (int j = 0; j < x.m; j++) {
+                if (eq(key, children[j].key)) 
+                	return (Value)children[j].val;
+            }
+        }
+    ``` 
+     
+     En el caso de estar en un nivel distinto, se compara para cada llave del nodo actual el link con el valor de la llave siguiente. En caso de que sea verdad se aplicara la funcion search al hijo entre la llave actual y la llave siguiente:
+    ```sh
+        else {
+            for (int j = 0; j < x.m; j++) {
+                if (j+1 == x.m || less(key, children[j+1].key))
+                    return search(children[j].next, key, ht-1);
+            }
+        }
+    ```
+    
 #
 - 2. Mostrar en un diagrama de árbol gráficamente la estructura final para los datos
 ingresados. (4 puntos)
